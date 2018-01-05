@@ -6,5 +6,9 @@
 !*.vim
 !*.bashrc
 !.gitignore
+!bin/
 !bin/*
+!bin/completions/
 !bin/completions/*
+!.ssh/
+!.ssh/config

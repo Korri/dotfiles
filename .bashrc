@@ -69,7 +69,7 @@ if [ "$color_prompt" = yes ]; then
         else
             result="${Green}⏵${RCol}"
         fi
-        __git_ps1 "\[\e]0;\w\a\]${Blu}\u${RCol} ${Yel}\w${RCol} " "\n${result} " "(%s ${Grey}$(get_sha)${RCol})"
+        __git_ps1 "${result} \[\e]0;\w\a\]${Blu}\u${RCol} " "\n${Yel}\w${RCol}$ " "(%s ${Grey}$(get_sha)${RCol})"
     }
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
