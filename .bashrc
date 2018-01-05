@@ -41,10 +41,40 @@ case "$TERM" in
 esac
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    source ~/bin/completions/git-prompt.sh
+    source ~/bin/completions/git-completion.bash
+    export GIT_PS1_SHOWCOLORHINTS=1
+    export GIT_PS1_DESCRIBE_STYLE="branch"
+    get_sha() {
+        git rev-parse --short HEAD 2>/dev/null
+    }
+
+    PROMPT_COMMAND=__prompt_command # Func to gen PS1 after CMDs
+
+    __prompt_command() {
+        local EXIT="$?"             # This needs to be first
+        PS1=""
+
+        local RCol='\[\e[0m\]'
+
+        local Red='\[\e[0;31m\]'
+        local Green='\[\e[0;32m\]'
+        local Yel='\[\e[0;33m\]'
+        local Blu='\[\e[0;34m\]'
+        local Pur='\[\e[0;35m\]'
+        local Grey='\[\e[0;37m\]'
+
+        if [ $EXIT != 0 ]; then
+            result="${Red}⏵${RCol}"      # Add red if exit code non 0
+        else
+            result="${Green}⏵${RCol}"
+        fi
+        __git_ps1 "\[\e]0;\w\a\]${Blu}\u${RCol} ${Yel}\w${RCol} " "\n${result} " "(%s ${Grey}$(get_sha)${RCol})"
+    }
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
+
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -100,8 +130,17 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# set PATH so it includes user's private bin if it exists
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
+# Add GO to path
+GOPATH="$HOME/go"
+PATH="/usr/local/go/bin:$GOPATH:$GOPATH/bin:$PATH"
+
+# Add Composer bins to path
+PATH="$HOME/.composer/vendor/bin:$PATH"
+
 export EDITOR=vim
-export PATH=~/.composer/vendor/bin/:~/.local/bin:$PATH
 
 # Some fancy aliases
 alias getcomposer='curl -sS https://getcomposer.org/installer | php'
