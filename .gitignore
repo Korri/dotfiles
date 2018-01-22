@@ -12,3 +12,6 @@
 !bin/completions/*
 !.ssh/
 !.ssh/config
+!.config
+!.config/gtk-3.0
+!.config/gtk-3.0/gtk.css
