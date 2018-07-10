@@ -2,17 +2,20 @@
 *
 
 # But not these files...
-!*.vimrc
-!*.vim
-!*.bashrc
+!/*.vimrc
+!/*.vim
+!/*.bashrc
 !*.bash_aliases
-!.gitignore
-!bin/
-!bin/*
-!bin/completions/
-!bin/completions/*
-!.ssh/
-!.ssh/config
-!.config
-!.config/gtk-3.0
-!.config/gtk-3.0/gtk.css
+!/.gitignore
+!/bin/
+!/bin/*
+!/bin/completions/
+!/bin/completions/*
+!/.ssh/
+!/.ssh/config
+!/.ssh/config.d/
+!/.ssh/config.d/.gitkeep
+!/.config
+!/.config/gtk-3.0
+!/.config/gtk-3.0/gtk.css
+!/notes/

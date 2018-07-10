@@ -8,4 +8,10 @@ if [ -z "${HOSTS}" ]; then
 	exit 1
 fi
 
-ssh-multi -u hugov -d "${HOSTS}"
+HOSTS_COUNT=$(echo $HOSTS | wc -w)
+
+if [ "$HOSTS_COUNT" -gt "1" ]; then
+	ssh-multi -u hugov -d "${HOSTS}"
+else
+	ssh hugov@$HOSTS
+fi
