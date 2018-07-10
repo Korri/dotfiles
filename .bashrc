@@ -142,7 +142,8 @@ PATH="$HOME/.composer/vendor/bin:$PATH"
 
 export EDITOR=vim
 
-# Some fancy aliases
-alias getcomposer='curl -sS https://getcomposer.org/installer | php'
-alias clip='xclip -selection clipboard'
-alias e.='nautilus --no-desktop --browser . &> /dev/null &'
+# Machine specific options
+if [ -f ~/.bash_local ]; then
+    . ~/.bash_local
+fi
+

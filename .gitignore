@@ -5,6 +5,7 @@
 !*.vimrc
 !*.vim
 !*.bashrc
+!*.bash_aliases
 !.gitignore
 !bin/
 !bin/*
