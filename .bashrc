@@ -138,7 +138,7 @@ GOPATH="$HOME/go"
 PATH="/usr/local/go/bin:$GOPATH:$GOPATH/bin:$PATH"
 
 # Add Composer bins to path
-PATH="$HOME/.composer/vendor/bin:$PATH"
+PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # Add node modules bin to path
 PATH="$HOME/node_modules/.bin:$PATH"
