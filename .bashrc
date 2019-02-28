@@ -65,9 +65,9 @@ if [ "$color_prompt" = yes ]; then
         local Grey='\[\e[0;37m\]'
 
         if [ $EXIT != 0 ]; then
-            result="${Red}⏵${RCol}"      # Add red if exit code non 0
+            result="${Red}✗${RCol}"      # Add red if exit code non 0
         else
-            result="${Green}⏵${RCol}"
+            result="${Green}✓${RCol}"
         fi
         __git_ps1 "${result} \[\e]0;\w\a\]${Blu}\u${RCol} " "\n${Yel}\w${RCol}$ " "(%s ${Grey}$(get_sha)${RCol})"
     }
@@ -142,6 +142,12 @@ PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # Add node modules bin to path
 PATH="$HOME/node_modules/.bin:$PATH"
+
+# Add chruby bin to path
+PATH="/usr/local/share/chruby:$PATH"
+
+# Set PKG path
+PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig
 
 export EDITOR=vim
 
