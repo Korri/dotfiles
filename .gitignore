@@ -5,6 +5,7 @@
 !/*.vimrc
 !/*.vim
 !/*.bashrc
+!/*.bash_profile
 !*.bash_aliases
 !/.gitignore
 !/bin/
