@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+AUTH=$1
+
+if [[ -z $AUTH ]];
+then
+    echo "Usage: $0 GithubUsername:personal_access_token"
+    exit
+fi
+
+declare -A teams
+
+teams[username1]=teams-name
+teams[username2]=teams-name
+
+
+for user in "${!teams[@]}"; do
+  curl \
+    -X PUT \
+    -H "Accept: application/vnd.github.v3+json" \
+    -u "$AUTH" \
+    "https://api.github.com/orgs/Shopify/teams/${teams[$user]}/memberships/$user"
+done
