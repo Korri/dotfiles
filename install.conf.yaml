@@ -6,10 +6,19 @@
 
 - link:
     ~/.vimrc: home/.vimrc
-    ~/.ssh: home/.ssh
+    ~/.ssh/config: home/.ssh/config
     ~/bin: home/bin
+
+- create:
+  - ~/.ssh/config.d:
+    mode: 0700
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
 
-- cask: [colorpicker, vlc]
+- cask:
+  - toinane-colorpicker
+  - alfred
+  - maccy
+  - sizeup
+  - todoist
