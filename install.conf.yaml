@@ -1,0 +1,15 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.vimrc: home/.vimrc
+    ~/.ssh: home/.ssh
+    ~/bin: home/bin
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
+- cask: [colorpicker, vlc]
