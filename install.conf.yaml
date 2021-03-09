@@ -8,6 +8,7 @@
     ~/.vimrc: home/.vimrc
     ~/.ssh/config: home/.ssh/config
     ~/bin: home/bin
+    ~/.config/karabiner/karabiner.json: home/.config/karabiner/karabiner.json
 
 - create:
   - ~/.ssh/config.d:
@@ -21,4 +22,5 @@
   - alfred
   - maccy
   - sizeup
-  - todoist
+  - karabiner-elements
+  - iterm2
