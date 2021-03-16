@@ -14,8 +14,11 @@
   - ~/.ssh/config.d:
     mode: 0700
 
-- shell:
-  - [git submodule update --init --recursive, Installing submodules]
-
 - brewfile:
     - Brewfile
+
+# Install packages from Brewfile-shopify only if mac is managed by Shopify
+- shell:
+  - command: profiles status -type enrollment | grep "jamfpro.shopify" && brew bundle --file Brewfile-shopify
+    stdout: true
+    stderr: true

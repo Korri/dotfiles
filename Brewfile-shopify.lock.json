@@ -1,0 +1,30 @@
+{
+  "entries": {
+    "cask": {
+      "tuple": {
+        "version": "0.82.0-2020,12-14-83be3274",
+        "options": {
+          "full_name": "tuple"
+        }
+      },
+      "1password": {
+        "version": "7.8",
+        "options": {
+          "full_name": "1password"
+        }
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "big_sur": {
+        "HOMEBREW_VERSION": "3.0.6",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "1578e4e644077b3330b3397f7cce4b7570fb2ad0",
+        "CLT": "12.4.0.0.1.1610135815",
+        "Xcode": "12.0",
+        "macOS": "11.2.1"
+      }
+    }
+  }
+}
