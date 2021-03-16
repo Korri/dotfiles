@@ -17,11 +17,5 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
 
-- cask:
-  - toinane-colorpicker
-  - alfred
-  - maccy
-  - sizeup
-  - karabiner-elements
-  - iterm2
-  - gimp
+- brewfile:
+    - Brewfile
