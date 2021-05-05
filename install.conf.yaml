@@ -9,6 +9,7 @@
     ~/.ssh/config: home/.ssh/config
     ~/bin: home/bin
     ~/.config/karabiner/karabiner.json: home/.config/karabiner/karabiner.json
+    ~/.tmux.conf: home/.tmux.conf
 
 - create:
   - ~/.ssh/config.d:
