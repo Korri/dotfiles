@@ -1,6 +1,11 @@
 - defaults:
     link:
       relink: true
+      force: true
+    brewfile:
+      stdout: false
+      stderr: false
+      include: ['tap', 'brew', 'cask', 'mas']
 
 - clean: ['~']
 
@@ -10,10 +15,7 @@
     ~/bin: home/bin
     ~/.config/karabiner/karabiner.json: home/.config/karabiner/karabiner.json
     ~/.tmux.conf: home/.tmux.conf
-
-- create:
-  - ~/.ssh/config.d:
-    mode: 0700
+    ~/.zshrc: home/.zshrc
 
 - brewfile:
     - Brewfile
@@ -23,3 +25,6 @@
   - command: profiles status -type enrollment | grep "jamfpro.shopify" && brew bundle --file Brewfile-shopify
     stdout: true
     stderr: true
+  - command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc || true
+    stdout: false
+    stderr: false
