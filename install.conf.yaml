@@ -30,3 +30,4 @@
   - command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc || true
     stdout: false
     stderr: false
+  - command: touch ~/.gitconfig_local

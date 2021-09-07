@@ -34,11 +34,6 @@
 	# Show the user email for the current repository.
 	whoami = config user.email
 
-[user]
-
-	name = Hugo Vacher
-	email = korrigan33@gmail.com
-
 [pull]
 
 	ff = only
@@ -83,3 +78,14 @@
 
     # use `main` instead of `master`
 	defaultBranch = main
+
+[commit]
+
+	gpgsign = true
+
+[user]
+
+      # These values are set in ~/.gitconfig_local
+
+[include]
+      path = ~/.gitconfig_local

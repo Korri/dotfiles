@@ -9,6 +9,7 @@ cask 'gimp'
 cask 'vlc'
 cask 'zoom'
 cask 'google-chrome'
+cask 'gpg-suite'
 
 # Mac app store
 mas 'Todoist', id: 585829637
