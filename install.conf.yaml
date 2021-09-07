@@ -16,6 +16,8 @@
     ~/.config/karabiner/karabiner.json: home/.config/karabiner/karabiner.json
     ~/.tmux.conf: home/.tmux.conf
     ~/.zshrc: home/.zshrc
+    ~/.gitconfig: home/.gitconfig
+    ~/.gitignore: home/.gitignore
 
 - brewfile:
     - Brewfile
