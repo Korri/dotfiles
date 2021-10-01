@@ -79,10 +79,6 @@
     # use `main` instead of `master`
 	defaultBranch = main
 
-[commit]
-
-	gpgsign = true
-
 [user]
 
       # These values are set in ~/.gitconfig_local
