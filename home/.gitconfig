@@ -80,8 +80,8 @@
 	defaultBranch = main
 
 [user]
-
-      # These values are set in ~/.gitconfig_local
+	name = Hugo Vacher # My name doesn't change per env
+	# Email value is set in ~/.gitconfig_local
 
 [include]
       path = ~/.gitconfig_local
