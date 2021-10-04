@@ -13,7 +13,9 @@
     ~/.vimrc: home/.vimrc
     ~/.ssh/config: home/.ssh/config
     ~/bin: home/bin
-    ~/.config/karabiner/karabiner.json: home/.config/karabiner/karabiner.json
+    ~/.config/karabiner/karabiner.json:
+      if: '[[ $(uname) == "Darwin" ]]'
+      path: home/.config/karabiner/karabiner.json
     ~/.tmux.conf: home/.tmux.conf
     ~/.zshrc: home/.zshrc
     ~/.gitconfig: home/.gitconfig
@@ -24,10 +26,13 @@
 
 # Install packages from Brewfile-shopify only if mac is managed by Shopify
 - shell:
-  - command: profiles status -type enrollment | grep "jamfpro.shopify" && brew bundle --file Brewfile-shopify
+  - command: profiles status -type enrollment | grep "jamfpro.shopify" && brew bundle --file Brewfile-shopify || true
     stdout: true
     stderr: true
   - command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc || true
-    stdout: false
-    stderr: false
   - command: touch ~/.gitconfig_local
+  - command: chsh -s $(which zsh)
+    stdout: true
+    stderr: true
+    stdin: true
+
