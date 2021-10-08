@@ -35,4 +35,4 @@
     stdout: true
     stderr: true
     stdin: true
-
+  - command: "[ $SPIN ] && ./spin_setup.sh"
