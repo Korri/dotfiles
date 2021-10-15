@@ -28,11 +28,9 @@
 # Install packages from Brewfile-shopify only if mac is managed by Shopify
 - shell:
   - command: profiles status -type enrollment | grep "jamfpro.shopify" && brew bundle --file Brewfile-shopify || true
-    stdout: true
-    stderr: true
   - command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc || true
   - command: touch ~/.gitconfig_local
-  - command: chsh -s $(which zsh)
+  - command: "[[ $(getent passwd $(whoami) | awk -F: '{print $NF}') == '/bin/zsh' ]] || chsh -s $(which zsh)"
     stdout: true
     stderr: true
     stdin: true
