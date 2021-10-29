@@ -85,3 +85,5 @@
 
 [include]
       path = ~/.gitconfig_local
+[push]
+	default = current
