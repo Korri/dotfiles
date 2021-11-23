@@ -81,6 +81,7 @@
 
 [user]
 	name = Hugo Vacher # My name doesn't change per env
+	email = 
 	# Email value is set in ~/.gitconfig_local
 
 [include]
