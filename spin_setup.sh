@@ -1,5 +1,5 @@
 #!/bin/zsh
-set -e
+set -xe
 
 echo '[user]
 	email = hugo.vacher@shopify.com
