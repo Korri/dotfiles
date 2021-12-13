@@ -22,16 +22,12 @@
     ~/.gitignore: home/.gitignore
     ~/.pryrc: home/.pryrc
 
-- brewfile:
-    - Brewfile
-
 # Install packages from Brewfile-shopify only if mac is managed by Shopify
 - shell:
-  - command: profiles status -type enrollment | grep "jamfpro.shopify" && brew bundle --file Brewfile-shopify || true
   - command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc || true
   - command: touch ~/.gitconfig_local
-  - command: "[[ $(getent passwd $(whoami) | awk -F: '{print $NF}') == '/bin/zsh' ]] || chsh -s $(which zsh)"
-    stdout: true
-    stderr: true
-    stdin: true
   - command: "[ $SPIN ] && ./spin_setup.sh"
+  - command: profiles status -type enrollment | grep "jamfpro.shopify" && brew bundle --file Brewfile-shopify || true
+
+- brewfile:
+    - Brewfile
