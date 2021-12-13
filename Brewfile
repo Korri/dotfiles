@@ -1,5 +1,4 @@
 # Apps
-cask 'toinane-colorpicker'
 cask 'alfred'
 cask 'maccy'
 cask 'sizeup'
@@ -10,6 +9,9 @@ cask 'vlc'
 cask 'zoom'
 cask 'google-chrome'
 cask 'gpg-suite'
-
-# Mac app store
-mas 'Todoist', id: 585829637
+cask 'visual-studio-code'
+cask 'loopback'
+cask 'krisp'
+cask 'scroll-reverser'
+cask 'spotify'
+cask 'obsidian'
