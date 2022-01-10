@@ -1,0 +1,10 @@
+{
+    "git.enableSmartCommit": true,
+    "remote.SSH.defaultExtensions": [
+        "eamodio.gitlens",
+        "graphql.vscode-graphql",
+        "cweijan.vscode-database-client2",
+        "ms-vsliveshare.vsliveshare",
+        "redhat.vscode-yaml",
+    ]
+}

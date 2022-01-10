@@ -23,7 +23,7 @@
 - shell:
   - command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc || true
   - command: touch ~/.gitconfig_local
-  - command: "[ $SPIN ] && ./spin_setup.sh"
+  - command: "[ $SPIN ] && ./spin_setup.sh || true"
   - command: profiles status -type enrollment | grep "jamfpro.shopify" && brew bundle --file Brewfile-shopify || true
 
 - brewfile:
@@ -33,3 +33,6 @@
     ~/.config/karabiner/karabiner.json:
       if: '[[ $(uname) == "Darwin" ]]'
       path: home/.config/karabiner/karabiner.json
+    ~/Library/Application Support/Code/User/settings.json:
+      if: '[[ $(uname) == "Darwin" ]]'
+      path: home/Library/Application Support/Code/User/settings.json
