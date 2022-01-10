@@ -6,5 +6,6 @@
         "cweijan.vscode-database-client2",
         "ms-vsliveshare.vsliveshare",
         "redhat.vscode-yaml",
-    ]
+    ],
+    "sorbet.enabled": true,
 }
