@@ -1,7 +1,7 @@
 # Apps
 cask 'alfred'
 cask 'maccy'
-cask 'sizeup'
+cask 'rectangle'
 cask 'karabiner-elements'
 cask 'iterm2'
 cask 'gimp'
