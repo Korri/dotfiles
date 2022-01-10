@@ -13,9 +13,6 @@
     ~/.vimrc: home/.vimrc
     ~/.ssh/config: home/.ssh/config
     ~/bin: home/bin
-    ~/.config/karabiner/karabiner.json:
-      if: '[[ $(uname) == "Darwin" ]]'
-      path: home/.config/karabiner/karabiner.json
     ~/.tmux.conf: home/.tmux.conf
     ~/.zshrc: home/.zshrc
     ~/.gitconfig: home/.gitconfig
@@ -31,3 +28,8 @@
 
 - brewfile:
     - Brewfile
+
+- link:
+    ~/.config/karabiner/karabiner.json:
+      if: '[[ $(uname) == "Darwin" ]]'
+      path: home/.config/karabiner/karabiner.json
