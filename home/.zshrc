@@ -28,5 +28,8 @@ PATH="$HOME/node_modules/.bin:$PATH"
 # Add chruby bin to path
 PATH="/usr/local/share/chruby:$PATH"
 
+# Add Brew to path
+PATH="/opt/homebrew/bin:$PATH"
+
 #Use vim by default
 export EDITOR=vim
