@@ -5,6 +5,3 @@
 [submodule "dotbot-brew"]
 	path = dotbot-brew
 	url = https://github.com/d12frosted/dotbot-brew.git
-[submodule "dev-test-runner"]
-	path = dev-test-runner
-	url = https://github.com/Shopify/dev-test-runner/
