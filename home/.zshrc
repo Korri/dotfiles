@@ -31,5 +31,13 @@ PATH="/usr/local/share/chruby:$PATH"
 # Add Brew to path
 PATH="/opt/homebrew/bin:$PATH"
 
-#Use vim by default
+# Use vim by default
 export EDITOR=vim
+
+# Spin autocomplete
+if command -v spin &> /dev/null
+then
+  zstyle ':completion:*' use-cache on
+  autoload -Uz compinit && compinit
+  source <(spin completion)
+fi
