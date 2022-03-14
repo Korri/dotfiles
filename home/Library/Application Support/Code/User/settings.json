@@ -6,6 +6,24 @@
         "cweijan.vscode-database-client2",
         "ms-vsliveshare.vsliveshare",
         "redhat.vscode-yaml",
+        "github.copilot",
     ],
     "sorbet.enabled": true,
+    "redhat.telemetry.enabled": false,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.rulers": [
+        120
+    ],
+    "workbench.editor.wrapTabs": true,
+    "editor.inlineSuggest.enabled": true,
+    "editor.detectIndentation": true,
+    "editor.tabSize": 2,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "[ruby]": {
+        "editor.defaultFormatter": "Shopify.rubocop-lsp"
+    },
 }
