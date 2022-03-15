@@ -25,10 +25,9 @@
   - command: touch ~/.gitconfig_local
   - command: "[ $SPIN ] && ./spin_setup.sh || true"
   - command: profiles status -type enrollment | grep "jamfpro.shopify" && brew bundle --file Brewfile-shopify || true
+  - command: "[[ $(uname) == \"Darwin\" ]] && brew bundle || true"
 
-- brewfile:
-    - Brewfile
-
+# Mac specific links
 - link:
     ~/.config/karabiner/karabiner.json:
       if: '[[ $(uname) == "Darwin" ]]'
