@@ -2,6 +2,7 @@
     link:
       relink: true
       force: true
+      create: true
     brewfile:
       stdout: false
       stderr: false
