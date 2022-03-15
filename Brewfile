@@ -1,6 +1,7 @@
 # Apps
 # cask 'google-chrome'
 # cask 'visual-studio-code'
+cask '1password'
 cask 'affinity-designer'
 cask 'affinity-photo'
 cask 'alfred'
