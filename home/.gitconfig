@@ -28,6 +28,10 @@
 	# a.k.a. ‘delete merged’
 	tidy = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
+	# Rebase on fresh remote main/master
+	main = "!git fetch origin main && git rebase origin/main"
+	master = "!git fetch origin master && git rebase origin/master"
+
 	# List contributors with number of commits.
 	contributors = shortlog --summary --numbered
 
