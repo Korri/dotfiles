@@ -7,6 +7,10 @@ git main
 bundler install
 
 echo "
+Layout/FirstArgumentIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
 Layout/MultilineMethodArgumentLineBreaks:
   Enabled: true
 
@@ -25,13 +29,11 @@ Layout/FirstArrayElementLineBreak:
 Layout/FirstHashElementLineBreak:
   Enabled: true
 
-Layout/FirstArgumentIndentation:
-  EnforcedStyle: consistent
-
 Layout/FirstMethodParameterLineBreak:
   Enabled: true" >> .rubocop.yml
 
 bundle exec rubocop --fix-layout --force-exclusion $@
+bundle exec rubocop --auto-correct --only Style/TrailingCommaInArrayLiteral --force-exclusion $@
 
 git restore .rubocop.yml
 
@@ -42,6 +44,7 @@ git commit -a -m "Run new Layout cops on $@
 Autocorrect all layout issues after adding the following cops:
 
 ```
+  Layout/FirstArgumentIndentation
   Layout/MultilineMethodArgumentLineBreaks
   Layout/MultilineArrayLineBreaks
   Layout/MultilineHashKeyLineBreaks
