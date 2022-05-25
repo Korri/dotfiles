@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -x
+
 echo "
 Layout/MultilineMethodArgumentLineBreaks:
   Enabled: true
@@ -26,3 +28,26 @@ Layout/FirstMethodParameterLineBreak:
   Enabled: true" >> .rubocop.yml
 
 bundle exec rubocop --fix-layout --force-exclusion $@
+
+git restore .rubocop.yml
+
+git checkout -b "autocorrect-multiline-$@"
+
+git commit -a -m "Run new Layout cops on $@
+
+Autocorrect all layout issues after adding the following cops:
+  Layout/MultilineMethodArgumentLineBreaks
+  Layout/MultilineArrayLineBreaks
+  Layout/MultilineHashKeyLineBreaks
+  Layout/FirstMethodArgumentLineBreak
+  Layout/FirstArrayElementLineBreak
+  Layout/FirstHashElementLineBreak
+  Layout/FirstArgumentIndentation
+  Layout/FirstMethodParameterLineBreak
+  
+This will ensure that we can bump Shopify/ruby-style-guide
+"
+
+git push
+
+dev open pr
