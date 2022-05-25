@@ -2,6 +2,10 @@
 
 set -x
 
+git main
+
+bundler install
+
 echo "
 Layout/MultilineMethodArgumentLineBreaks:
   Enabled: true
@@ -36,6 +40,8 @@ git checkout -b "autocorrect-multiline-$@"
 git commit -a -m "Run new Layout cops on $@
 
 Autocorrect all layout issues after adding the following cops:
+
+```
   Layout/MultilineMethodArgumentLineBreaks
   Layout/MultilineArrayLineBreaks
   Layout/MultilineHashKeyLineBreaks
@@ -44,8 +50,10 @@ Autocorrect all layout issues after adding the following cops:
   Layout/FirstHashElementLineBreak
   Layout/FirstArgumentIndentation
   Layout/FirstMethodParameterLineBreak
+```
   
-This will ensure that we can bump Shopify/ruby-style-guide
+This will ensure that we can bump `Shopify/ruby-style-guide` with
+the changes added here https://github.com/Shopify/ruby-style-guide/pull/387
 "
 
 git push
