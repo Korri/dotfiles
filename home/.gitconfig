@@ -73,10 +73,19 @@
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
 
+  # Use VSCode as the default editor for Git.
+	editor = code --wait
+
 [diff]
 
 	# Detect copies as well as renames.
 	renames = copies
+
+	# Use VSCode
+	tool = default-difftool
+
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
 
 [init]
 
