@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+setopt +o nomatch # Ignore empty matches for wildcard paths
+
+cd /media/data/DCIM
+files=(DROP/**/*.{JPG,MP4,ARW,MTS}(N))
+for pic in $files; do
+	d=$(date -r "$pic" +%Y/%Y-%m-%d)
+	mkdir -p "$d"
+	echo "Moving $pic to $d"
+	mv -- "$pic" "$d/"
+done
+echo "Deleting empty directories"
+find DROP/ -type d -empty -print -delete
