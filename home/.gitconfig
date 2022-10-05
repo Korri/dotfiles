@@ -1,7 +1,7 @@
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
-	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+	l = !git --no-pager log --oneline -n 15
 
 	# View the current working tree status using the short format.
 	s = status -s
@@ -10,7 +10,7 @@
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
 	# List aliases.
-	aliases = config --get-regexp alias
+	aliases = !git --no-pager config --get-regexp alias
 
 	# Amend the currently staged files to the latest commit.
 	amend = commit --amend --reuse-message=HEAD
@@ -97,6 +97,9 @@
 	# Email value is set in ~/.gitconfig_local
 
 [include]
-      path = ~/.gitconfig_local
+	path = ~/.gitconfig_local
+	path = /Users/hugo/.config/dev/gitconfig
 [push]
 	default = current
+[credential]
+	username = Korri
