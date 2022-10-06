@@ -1,7 +1,7 @@
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
-	l = log --oneline -n 15
+	l = !git --no-pager log --oneline -n 15
 
 	# View the current working tree status using the short format.
 	s = status -s
@@ -10,7 +10,7 @@
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
 	# List aliases.
-	aliases = config --get-regexp alias
+	aliases = !git --no-pager config --get-regexp alias
 
 	# Amend the currently staged files to the latest commit.
 	amend = commit --amend --reuse-message=HEAD
@@ -75,7 +75,6 @@
 
   # Use VSCode as the default editor for Git.
 	editor = code --wait
-	pager = less -F
 
 [diff]
 
