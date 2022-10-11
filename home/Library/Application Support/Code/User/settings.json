@@ -3,7 +3,6 @@
     "remote.SSH.defaultExtensions": [
         "eamodio.gitlens",
         "graphql.vscode-graphql",
-        "cweijan.vscode-database-client2",
         "ms-vsliveshare.vsliveshare",
         "redhat.vscode-yaml",
         "github.copilot",
@@ -11,7 +10,7 @@
     "sorbet.enabled": true,
     "redhat.telemetry.enabled": false,
     "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
     "editor.rulers": [
         120
@@ -24,6 +23,30 @@
     "gitlens.codeLens.enabled": false,
     "gitlens.statusBar.enabled": false,
     "[ruby]": {
-        "editor.defaultFormatter": "Shopify.rubocop-lsp"
+        "editor.defaultFormatter": "Shopify.ruby-lsp",
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true,
+        "editor.semanticHighlighting.enabled": true
     },
+    "editor.foldingMaximumRegions": 10000,
+    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": true,
+        "plaintext": false,
+        "markdown": false
+    },
+    "byesig.opacity": 0.8,
+    "terminal.integrated.scrollback": 10000,
+    "byesig.fold": false,
+    "byesig.enabled": true,
+    "byesig.showIcon": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.autoSave": "onFocusChange",
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "editor.stickyScroll.enabled": true,
+    "shopifyGlobal.mysqlEditor": "external",
 }
