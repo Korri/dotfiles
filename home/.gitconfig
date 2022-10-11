@@ -1,88 +1,88 @@
 [alias]
 
-	# View abbreviated SHA, description, and history graph of the latest 20 commits.
-	l = !git --no-pager log --oneline -n 15
+    # View abbreviated SHA, description, and history graph of the latest 20 commits.
+    l = !git --no-pager log --oneline -n 15
 
-	# View the current working tree status using the short format.
-	s = status -s
+    # View the current working tree status using the short format.
+    s = status -s
 
-	# Switch to a branch, creating it if necessary.
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+    # Switch to a branch, creating it if necessary.
+    go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
-	# List aliases.
-	aliases = !git --no-pager config --get-regexp alias
+    # List aliases.
+    aliases = !git --no-pager config --get-regexp alias
 
-	# Amend the currently staged files to the latest commit.
-	amend = commit --amend --reuse-message=HEAD
+    # Amend the currently staged files to the latest commit.
+    amend = commit --amend --reuse-message=HEAD
 
-	# Credit an author on the latest commit.
-	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+    # Credit an author on the latest commit.
+    credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 
-	# Interactive rebase with the given number of latest commits.
-	reb = "!r() { git rebase -i HEAD~$1; }; r"
+    # Interactive rebase with the given number of latest commits.
+    reb = "!r() { git rebase -i HEAD~$1; }; r"
 
-	# Find commits by commit message
-	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+    # Find commits by commit message
+    fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
-	# Remove branches that have already been merged with main.
-	# a.k.a. ‘delete merged’
-	tidy = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+    # Remove branches that have already been merged with main.
+    # a.k.a. ‘delete merged’
+    tidy = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
-	# Rebase on fresh remote main/master
-	main = "!git fetch origin main && git rebase origin/main"
-	master = "!git fetch origin master && git rebase origin/master"
+    # Rebase on fresh remote main/master
+    main = "!git fetch origin main && git rebase origin/main"
+    master = "!git fetch origin master && git rebase origin/master"
 
-	# List contributors with number of commits.
-	contributors = shortlog --summary --numbered
+    # List contributors with number of commits.
+    contributors = shortlog --summary --numbered
 
-	# Show the user email for the current repository.
-	whoami = config user.email
+    # Show the user email for the current repository.
+    whoami = config user.email
 
 [pull]
 
-	ff = only
+    ff = only
 
 [apply]
 
-	# Detect whitespace errors when applying a patch.
-	whitespace = fix
+    # Detect whitespace errors when applying a patch.
+    whitespace = fix
 
 [branch]
 
-	# Show most recently changed branches first.
-	sort = -committerdate
+    # Show most recently changed branches first.
+    sort = -committerdate
 [core]
 
-	# Use custom `.gitignore`.
-	excludesfile = ~/.gitignore
+    # Use custom `.gitignore`.
+    excludesfile = ~/.gitignore
 
-	# Treat spaces before tabs and all kinds of trailing whitespace as an error.
-	# [default] trailing-space: looks for spaces at the end of a line
-	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
-	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+    # Treat spaces before tabs and all kinds of trailing whitespace as an error.
+    # [default] trailing-space: looks for spaces at the end of a line
+    # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+    whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
-	# Make `git rebase` safer on macOS.
-	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
-	trustctime = false
+    # Make `git rebase` safer on macOS.
+    # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+    trustctime = false
 
-	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
-	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
-	precomposeunicode = false
+    # Prevent showing files whose names contain non-ASCII symbols as unversioned.
+    # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+    precomposeunicode = false
 
-	# Speed up commands involving untracked files such as `git status`.
-	# https://git-scm.com/docs/git-update-index#_untracked_cache
-	untrackedCache = true
+    # Speed up commands involving untracked files such as `git status`.
+    # https://git-scm.com/docs/git-update-index#_untracked_cache
+    untrackedCache = true
 
-  # Use VSCode as the default editor for Git.
-	editor = code --wait
+    # Use VSCode as the default editor for Git.
+    editor = code --wait
 
 [diff]
 
-	# Detect copies as well as renames.
-	renames = copies
+    # Detect copies as well as renames.
+    renames = copies
 
-	# Use VSCode
-	tool = default-difftool
+    # Use VSCode
+    tool = default-difftool
 
 [difftool "default-difftool"]
     cmd = code --wait --diff $LOCAL $REMOTE
@@ -90,16 +90,14 @@
 [init]
 
     # use `main` instead of `master`
-	defaultBranch = main
+    defaultBranch = main
 
 [user]
-	name = Hugo Vacher # My name doesn't change per env
-	# Email value is set in ~/.gitconfig_local
+    name = Hugo Vacher # My name doesn't change per env
+    # Email value is set in ~/.gitconfig_local
 
 [include]
-	path = ~/.gitconfig_local
-	path = /Users/hugo/.config/dev/gitconfig
+    path = ~/.gitconfig_local
+
 [push]
-	default = current
-[credential]
-	username = Korri
+    default = current

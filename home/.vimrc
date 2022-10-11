@@ -10,7 +10,7 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" :W sudo saves the file 
+" :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
@@ -22,7 +22,7 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 " Enable syntax highlighting
-syntax enable 
+syntax enable
 
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
@@ -35,3 +35,12 @@ catch
 endtry
 
 set background=dark
+" show existing tab with 4 spaces width
+filetype plugin indent on
+
+" when indenting with '>', use 4 spaces width
+set tabstop=4
+set shiftwidth=4
+
+" On pressing tab, insert 4 spaces
+set expandtab
