@@ -31,6 +31,11 @@ PATH="/usr/local/share/chruby:$PATH"
 # Add Brew to path
 PATH="/opt/homebrew/bin:$PATH"
 
+# Import aliases
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
+
 # Use vim by default
 export EDITOR=vim
 
