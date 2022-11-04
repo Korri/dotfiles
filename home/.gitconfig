@@ -7,7 +7,7 @@
     s = status -s
 
     # Switch to a branch, creating it if necessary.
-    go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+    go = "!g() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; g"
 
     # List aliases.
     aliases = !git --no-pager config --get-regexp alias
@@ -16,10 +16,10 @@
     amend = commit --amend --reuse-message=HEAD
 
     # Credit an author on the latest commit.
-    credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+    credit = "!c() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; c"
 
-    # Interactive rebase with the given number of latest commits.
-    reb = "!r() { git rebase -i HEAD~$1; }; r"
+    # Interactive rebase with the given number of latest commits, or a specific commit's parent
+    reb = "!r() { git rebase -i $([ $1 -eq $1 2> /dev/null ] && echo HEAD~$1 || echo $1~1); }; r"
 
     # Find commits by commit message
     fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
