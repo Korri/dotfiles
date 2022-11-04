@@ -38,6 +38,10 @@
     # Show the user email for the current repository.
     whoami = config user.email
 
+    # Easy fixup an squash commits
+    fixup = commit --fixup
+    squash = commit --squash
+
 [pull]
 
     ff = only
