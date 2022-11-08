@@ -109,3 +109,6 @@
 [rebase]
     # Always autosquash when doing an interactive rebase
 	autosquash = true
+
+    # Always update branches that are based on the current branch when rebasing
+	updateRefs = true
