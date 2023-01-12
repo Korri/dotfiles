@@ -1,64 +1,30 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 set -x
 
+git checkout main
 git main
 
 bundler install
 
-echo "
-Layout/FirstArgumentIndentation:
-  Enabled: true
-  EnforcedStyle: consistent
+ruby ~/bin/remove-todos.rb $@
 
-Layout/MultilineMethodArgumentLineBreaks:
-  Enabled: true
-
-Layout/MultilineArrayLineBreaks:
-  Enabled: true
-
-Layout/MultilineHashKeyLineBreaks:
-  Enabled: true
-
-Layout/FirstMethodArgumentLineBreak:
-  Enabled: true
-
-Layout/FirstArrayElementLineBreak:
-  Enabled: true
-
-Layout/FirstHashElementLineBreak:
-  Enabled: true
-
-Layout/FirstMethodParameterLineBreak:
-  Enabled: true" >> .rubocop.yml
-
-bundle exec rubocop --fix-layout --force-exclusion $@
-bundle exec rubocop --auto-correct --only Style/TrailingCommaInArrayLiteral --force-exclusion $@
-
-git restore .rubocop.yml
+bundle exec rubocop --fix-layout $@
+bundle exec rubocop --autocorrect --only Style/TrailingCommaInArrayLiteral,Style/TrailingCommaInHashLiteral $@
 
 git checkout -b "autocorrect-multiline-$@"
 
-git commit -a -m "Run new Layout cops on $@
+git commit -a -m "Autocorrect new multiline elements cops for $@
 
-Autocorrect all layout issues after adding the following cops:
+Remove Rubocop todos related to new multiline element cops
+for $@, and autocorrect them instead.
 
-```
-  Layout/FirstArgumentIndentation
-  Layout/MultilineMethodArgumentLineBreaks
-  Layout/MultilineArrayLineBreaks
-  Layout/MultilineHashKeyLineBreaks
-  Layout/FirstMethodArgumentLineBreak
-  Layout/FirstArrayElementLineBreak
-  Layout/FirstHashElementLineBreak
-  Layout/FirstArgumentIndentation
-  Layout/FirstMethodParameterLineBreak
-```
-  
-This will ensure that we can bump `Shopify/ruby-style-guide` with
-the changes added here https://github.com/Shopify/ruby-style-guide/pull/387
+This is a follow up of #397470
 "
 
 git push
 
 dev open pr
+
+# Look for newly introduced, non-auto-correctable offenses
+dev style --include-branch-commits --only Layout/LineLength
