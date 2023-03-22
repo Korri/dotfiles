@@ -16,6 +16,7 @@
     ~/bin: home/bin
     ~/.tmux.conf: home/.tmux.conf
     ~/.zshrc: home/.zshrc
+    ~/.aliases: home/.aliases
     ~/.gitconfig: home/.gitconfig
     ~/.gitignore: home/.gitignore
     ~/.pryrc: home/.pryrc

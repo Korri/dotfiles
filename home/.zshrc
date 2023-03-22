@@ -32,8 +32,8 @@ PATH="/usr/local/share/chruby:$PATH"
 PATH="/opt/homebrew/bin:$PATH"
 
 # Import aliases
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
 fi
 
 # Use vim by default
