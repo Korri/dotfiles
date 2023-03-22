@@ -2,3 +2,30 @@
 alias getcomposer='curl -sS https://getcomposer.org/installer | php'
 alias clip='xclip -selection clipboard'
 
+function profdown() {
+    if [ $# -eq 0 ]; then
+        echo "Please specify the spin instance."
+    else
+        spin_instance="${1}.hugo-vacher.us.spin.dev"
+        download_dir="$HOME/Downloads/spin_profiles/${1}/"
+        echo "Downloading profiles for Spin instance: $spin_instance to $download_dir"
+        mkdir -p $download_dir
+        rsync -r spin@$spin_instance:/home/spin/src/github.com/Shopify/shopify/tmp/app_profiler/ $download_dir
+    fi
+}
+
+function style() {
+    if [ -f "bin/style" ]; then
+        bin/style --include-branch-commits
+    else
+        yarn run eslint --fix $(git diff --name-only main | xargs)
+    fi
+}
+
+function tests() {
+    if [ -f "bin/test" ]; then
+        bin/test --include-branch-commits
+    else
+        yarn test --changedSince main
+    fi
+}
