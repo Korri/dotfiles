@@ -1,7 +1,9 @@
 [alias]
 
-    # View abbreviated SHA, description, and history graph of the latest 20 commits.
+    # View abbreviated SHA, description, and history graph of the latest 15 commits.
     l = !git --no-pager log --oneline -n 15
+    # Same, but also show affected files
+    lf = !git --no-pager log --oneline -n 15 --name-only
 
     # View the current working tree status using the short format.
     s = status -s
