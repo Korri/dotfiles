@@ -4,6 +4,7 @@
  *
  * Copyright (C) 2023 Captain Vincent
  * Original Source: https://gist.github.com/CaptainVincent/74a15cd9d9c450e961b867f69008ee6e
+ * Current Source: https://gist.github.com/svintit/749fe3759f9ca7f7b4a211b61eccc0d2
  *
  * Everyone is permitted to copy and distribute verbatim copies of this license document,
  * but changing it is not allowed.
@@ -44,15 +45,15 @@ var styleElement = document.createElement("style");
 var styles = `
   .quick-input-widget {
     box-shadow: 0 5px 10px rgba(0,0,0,0), 0 0 0 100vw rgba(0,0,0,0.15) !important;
-    top: 0px !important;
-    width: calc(100% - 50px) !important;
+    top: 40px !important;
+    width: calc(100% - 60px) !important;
     margin-left: 0 !important;
-    left: 50px !important;
+    left: 5px !important;
     overflow-x: auto !important;
   }
   .quick-input-widget .monaco-inputbox {
-    padding: 10px !important;
-    border-radius: 5px !important;
+    padding: 2px !important;
+    border-radius: 2px !important;
     font-size: 14px !important;
   }
   .quick-input-widget .quick-input-action {
@@ -63,12 +64,12 @@ var styles = `
     font-size: 13px !important;
   }
   .quick-input-widget .monaco-list-row {
-    padding: 5px !important;
+    padding: 2px !important;
     height: auto !important;
   }
   .quick-input-widget .quick-input-list-entry {
     position: relative;
-    padding: 0px 5px 0px 15px;
+    padding: 0px 5px 0px 10px;
   }
   .quick-input-widget .quick-input-list-entry .codicon[class*=codicon-] {
     font-size: 15px;
