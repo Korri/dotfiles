@@ -1,9 +1,9 @@
 [alias]
 
-    # View abbreviated SHA, description, and history graph of the latest 15 commits.
-    l = !git --no-pager log --oneline -n 15
+    # View abbreviated SHA, description, and history graph of the latest 50 commits.
+    l = !git --no-pager log --oneline -n 50
     # Same, but also show affected files
-    lf = !git --no-pager log --oneline -n 15 --name-only
+    lf = !git --no-pager log --oneline -n 50 --name-only
 
     # View the current working tree status using the short format.
     s = status -s
@@ -114,3 +114,6 @@
 
     # Always update branches that are based on the current branch when rebasing
 	updateRefs = true
+
+    # Always stash before rebase
+    autoStash = true
