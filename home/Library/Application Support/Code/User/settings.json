@@ -48,4 +48,7 @@
     },
     "editor.stickyScroll.enabled": true,
     "shopifyGlobal.mysqlEditor": "external",
+    "apc.imports": [
+        "Users/hugo/src/github.com/Korri/dotfiles/home/Library/Application Support/resize-quickinput-widget.js"
+    ]
 }
