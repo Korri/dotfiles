@@ -50,6 +50,7 @@ var styles = `
     margin-left: 0 !important;
     left: 5px !important;
     overflow-x: auto !important;
+    border-radius: 2px !important;
   }
   .quick-input-widget .monaco-inputbox {
     padding: 2px !important;
