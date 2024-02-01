@@ -1,9 +1,9 @@
 [alias]
 
     # View abbreviated SHA, description, and history graph of the latest 50 commits.
-    l = !git --no-pager log --oneline -n 50
+    l = !git log --oneline -n 50
     # Same, but also show affected files
-    lf = !git --no-pager log --oneline -n 50 --name-only
+    lf = !git log --oneline -n 50 --name-only
 
     # View the current working tree status using the short format.
     s = status -s
@@ -12,7 +12,7 @@
     go = "!g() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; g"
 
     # List aliases.
-    aliases = !git --no-pager config --get-regexp alias
+    aliases = !git config --get-regexp alias
 
     # Amend the currently staged files to the latest commit.
     amend = commit --amend --reuse-message=HEAD
@@ -57,6 +57,7 @@
 
     # Show most recently changed branches first.
     sort = -committerdate
+
 [core]
 
     # Use custom `.gitignore`.
@@ -81,6 +82,9 @@
 
     # Use VSCode as the default editor for Git.
     editor = code --wait
+
+    # Force the use of -FRX so that short outputs do not get paged, and when it goes, still print to the terminal
+    pager = less -FRX
 
 [diff]
 
