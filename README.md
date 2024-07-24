@@ -1,7 +1,7 @@
 # dotfiles
 Dotfiles repository
 
-## Instal
+## Install
 
 ```bash
 git clone https://github.com/Korri/dotfiles.git
