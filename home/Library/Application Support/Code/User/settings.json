@@ -87,7 +87,7 @@
     },
     "gitlens.views.commits.pullRequests.enabled": false,
     "gitlens.views.pageItemLimit": 10,
-    "apc.imports": [
-        "Users/hugo/src/github.com/Korri/dotfiles/home/Library/Application Support/resize-quickinput-widget.js"
-    ]
+    "apc.stylesheet": {
+        "div.quick-input-widget": "top: 40px !important; width: calc(100% - 60px) !important; margin-left: 0 !important; left: 5px !important"
+    },
 }
