@@ -3,7 +3,6 @@
     "remote.SSH.defaultExtensions": [
         "eamodio.gitlens",
         "graphql.vscode-graphql",
-        "ms-vsliveshare.vsliveshare",
         "redhat.vscode-yaml",
         "github.copilot",
         "byesig",
